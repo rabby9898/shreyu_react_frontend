@@ -44,6 +44,9 @@ const Kanban = React.lazy(() => import("../pages/apps/Tasks/Board/"));
 // - file
 const FileManager = React.lazy(() => import("../pages/apps/FileManager"));
 
+// - Task Pages
+const Contracts = React.lazy(() => import("../pages/contracts/Contracts"));
+
 // extra pages
 const Error404 = React.lazy(() => import("../pages/error/Error404"));
 const Error500 = React.lazy(() => import("../pages/error/Error500"));
@@ -292,6 +295,12 @@ const uiRoutes: RoutesProps = {
       path: "/components/widgets",
       name: "Widgets",
       element: <Widgets />,
+      route: PrivateRoute,
+    },
+    {
+      path: "/components/contracts",
+      name: "Contracts",
+      element: <Contracts />,
       route: PrivateRoute,
     },
     {

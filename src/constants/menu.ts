@@ -361,6 +361,13 @@ const MENU_ITEMS: MenuItemTypes[] = [
       },
     ],
   },
+  {
+    key: "contracts",
+    label: "Contracts",
+    isTitle: false,
+    icon: "bar-chart-2",
+    url: "/components/contracts",
+  },
 ];
 
 const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
@@ -615,6 +622,12 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
             parentKey: "maps",
           },
         ],
+      },
+      {
+        key: "contracts",
+        label: "Contracts",
+        isTitle: false,
+        url: "/components/contracts",
       },
     ],
   },
@@ -1049,6 +1062,13 @@ const TWO_COl_MENU_ITEMS: MenuItemTypes[] = [
     isTitle: false,
     icon: "gift",
     url: "/components/widgets",
+  },
+  {
+    key: "contracts",
+    label: "Contracts",
+    isTitle: false,
+    icon: "bar-chart-2",
+    url: "/components/contracts",
   },
 ];
 
