@@ -44,11 +44,15 @@ const Kanban = React.lazy(() => import("../pages/apps/Tasks/Board/"));
 // - file
 const FileManager = React.lazy(() => import("../pages/apps/FileManager"));
 
-// - Task4 Pages
+/*---------------Task4 Pages------------------------*/ 
 const Contracts = React.lazy(() => import("../pages/contracts/Contracts"));
 const HomeVisits = React.lazy(() => import("../pages/homeVisits/HomeVisits"));
 const Patients = React.lazy(() => import("../pages/patients/Patients"));
 const Settings = React.lazy(() => import("../pages/settings/Settings"));
+const Roles = React.lazy(() => import("../pages/role&users/Roles"));
+const Users = React.lazy(() => import("../pages/role&users/Users"));
+
+/*---------------Task4 Pages------------------------*/
 
 // extra pages
 const Error404 = React.lazy(() => import("../pages/error/Error404"));
@@ -318,7 +322,24 @@ const uiRoutes: RoutesProps = {
       element: <Patients />,
       route: PrivateRoute,
     },
-
+    {
+      path: "/role&users",
+      name: "Roles And Users",
+      children: [
+        {
+          path: "/role&users/roles",
+          name: "Roles",
+          element: <Roles />,
+          route: PrivateRoute,
+        },
+        {
+          path: "/role&users/users",
+          name: "Users",
+          element: <Users />,
+          route: PrivateRoute,
+        },
+      ],
+    },
     {
       path: "/components/settings",
       name: "settings",

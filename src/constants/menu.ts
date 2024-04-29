@@ -365,28 +365,48 @@ const MENU_ITEMS: MenuItemTypes[] = [
     key: "contracts",
     label: "Contracts",
     isTitle: false,
-    icon: "",
+    icon: "link",
     url: "/components/contracts",
   },
   {
     key: "patients",
     label: "Patients",
     isTitle: false,
-    icon: "",
+    icon: "plus-square",
     url: "/components/patients",
   },
   {
     key: "homeVisits",
     label: "Home Visits",
     isTitle: false,
-    icon: "",
+    icon: "user-check",
     url: "/components/homeVisits",
+  },
+  {
+    key: "role&users",
+    label: "Roles And Users",
+    isTitle: false,
+    icon: "users",
+    children: [
+      {
+        key: "roles",
+        label: "Roles",
+        url: "/role&users/roles",
+        parentKey: "role&users",
+      },
+      {
+        key: "users",
+        label: "Users",
+        url: "/role&users/users",
+        parentKey: "role&users",
+      },
+    ],
   },
   {
     key: "settings",
     label: "Settings",
     isTitle: false,
-    icon: "",
+    icon: "settings",
     url: "/components/settings",
   },
 
@@ -664,6 +684,26 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
         isTitle: false,
         icon: "",
         url: "/components/homeVisits",
+      },
+      {
+        key: "role&users",
+        label: "Roles And Users",
+        isTitle: false,
+        // icon: "users",
+        children: [
+          {
+            key: "roles",
+            label: "Roles",
+            url: "/role&users/roles",
+            parentKey: "role&users",
+          },
+          {
+            key: "users",
+            label: "Users",
+            url: "/role&users/users",
+            parentKey: "role&users",
+          },
+        ],
       },
       {
         key: "settings",
@@ -1127,6 +1167,26 @@ const TWO_COl_MENU_ITEMS: MenuItemTypes[] = [
     isTitle: false,
     icon: "",
     url: "/components/homeVisits",
+  },
+  {
+    key: "role&users",
+    label: "Roles And Users",
+    isTitle: false,
+    icon: "users",
+    children: [
+      {
+        key: "roles",
+        label: "Roles",
+        url: "/role&users/roles",
+        parentKey: "role&users",
+      },
+      {
+        key: "users",
+        label: "Users",
+        url: "/role&users/users",
+        parentKey: "role&users",
+      },
+    ],
   },
   {
     key: "settings",
