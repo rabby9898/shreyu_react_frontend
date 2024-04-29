@@ -365,9 +365,31 @@ const MENU_ITEMS: MenuItemTypes[] = [
     key: "contracts",
     label: "Contracts",
     isTitle: false,
-    icon: "bar-chart-2",
+    icon: "",
     url: "/components/contracts",
   },
+  {
+    key: "patients",
+    label: "Patients",
+    isTitle: false,
+    icon: "",
+    url: "/components/patients",
+  },
+  {
+    key: "homeVisits",
+    label: "Home Visits",
+    isTitle: false,
+    icon: "",
+    url: "/components/homeVisits",
+  },
+  {
+    key: "settings",
+    label: "Settings",
+    isTitle: false,
+    icon: "",
+    url: "/components/settings",
+  },
+
 ];
 
 const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
@@ -628,6 +650,27 @@ const HORIZONTAL_MENU_ITEMS: MenuItemTypes[] = [
         label: "Contracts",
         isTitle: false,
         url: "/components/contracts",
+      },
+      {
+        key: "patients",
+        label: "Patients",
+        isTitle: false,
+        icon: "",
+        url: "/components/patients",
+      },
+      {
+        key: "homeVisits",
+        label: "Home Visits",
+        isTitle: false,
+        icon: "",
+        url: "/components/homeVisits",
+      },
+      {
+        key: "settings",
+        label: "Settings",
+        isTitle: false,
+        icon: "",
+        url: "/components/settings",
       },
     ],
   },
@@ -1067,8 +1110,30 @@ const TWO_COl_MENU_ITEMS: MenuItemTypes[] = [
     key: "contracts",
     label: "Contracts",
     isTitle: false,
-    icon: "bar-chart-2",
+    icon: "",
     url: "/components/contracts",
+
+  },
+  {
+    key: "patients",
+    label: "Patients",
+    isTitle: false,
+    icon: "",
+    url: "/components/patients",
+  },
+  {
+    key: "homeVisits",
+    label: "Home Visits",
+    isTitle: false,
+    icon: "",
+    url: "/components/homeVisits",
+  },
+  {
+    key: "settings",
+    label: "Settings",
+    isTitle: false,
+    icon: "",
+    url: "/components/settings",
   },
 ];
 
