@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import "./createContract.css";
 import {
   Row,
   Col,
@@ -10,6 +11,7 @@ import {
   InputGroup,
   Button,
 } from "react-bootstrap";
+import toast from "react-hot-toast";
 
 const CreateCotract = () => {
   const [value, setValue] = useState("");
@@ -62,8 +64,11 @@ const CreateCotract = () => {
       })
         .then((res) => res.json())
         .then((data) => console.log(data));
+      toast.success("Successfully Created!");
+      form.reset();
     } catch (err) {
       console.log(err);
+      toast.error("Created Failure!");
     }
   };
 
@@ -81,8 +86,8 @@ const CreateCotract = () => {
                 <Form.Control
                   type="text"
                   id="simpleinput1"
-                  defaultValue="Some text value..."
                   name="title"
+                  required
                 />
               </Col>
             </Form.Group>
@@ -96,8 +101,8 @@ const CreateCotract = () => {
                 <Form.Control
                   type="number"
                   id="simpleinput2"
-                  defaultValue="Percentage"
                   name="number"
+                  required
                 />
               </Col>
             </Form.Group>
@@ -112,7 +117,28 @@ const CreateCotract = () => {
           </div>
         </Row>
         <button
-          class="select-none rounded-lg bg-[#5369f8] my-2 py-2 px-10 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          style={{
+            backgroundColor: "#007bff",
+            color: "#fff",
+            border: "none",
+            borderRadius: "0.25rem",
+            padding: "0.7rem 2rem",
+            fontSize: "18px",
+            fontWeight: "bold",
+            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            transition: "box-shadow 0.3s ease, transform 0.3s ease",
+            marginTop: "22px",
+          }}
+          className="btn btn-lg"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = "translateY(-2px)";
+            e.currentTarget.style.boxShadow = "0px 6px 10px rgba(0, 0, 0, 0.2)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = "translateY(0px)";
+            e.currentTarget.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+          }}
+          class="btn btn-lg createBtn"
           type="submit"
         >
           Create

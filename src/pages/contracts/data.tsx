@@ -1,6 +1,6 @@
 // data.tsx
 
-import React from 'react';
+
 
 interface Contract {
   id: number;

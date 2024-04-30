@@ -7,6 +7,7 @@ import { configureFakeBackend } from "./helpers";
 // For Default import Theme.scss
 import "./assets/scss/Theme.scss";
 import "./main.css";
+import { Toaster } from "react-hot-toast";
 // For Dark import Theme-Dark.scss
 // import './assets/scss/Theme-Dark.scss';
 
@@ -18,6 +19,7 @@ const App = () => {
     <>
       <React.Fragment>
         <AllRoutes />
+        <Toaster position="top-center" />
       </React.Fragment>
     </>
   );
