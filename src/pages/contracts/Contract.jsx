@@ -1,46 +1,67 @@
 import { Row, Col, Card } from "react-bootstrap";
 import Table from "../../components/Table";
-import { records as data } from "./data"; // Import your JSON data and buttons
+// import { records as data } from "./data"; // Import your JSON data and buttons
 import { Link } from "react-router-dom";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import { useEffect, useState } from "react";
+
 const columns = [
+  { Header: "ID", accessor: "id", sort: true },
+  { Header: "Title", accessor: "title", sort: true },
+  { Header: "Discount", accessor: "discount", sort: false },
   {
-    Header: "ID",
-    accessor: "id",
-    sort: true,
-  },
-  {
-    Header: "Title",
-    accessor: "title",
-    sort: true,
-  },
-  {
-    Header: "Discount",
-    accessor: "discount",
-    sort: false,
+    Header: "Actions",
+    accessor: "actions",
+    Cell: ({ row }) => (
+      <div>
+        <button
+          onClick={() => handleEdit(row.original.id)}
+          className="btn btn-sm btn-primary mr-2"
+        >
+          Edit
+        </button>
+        <button
+          onClick={() => handleDelete(row.original.id)}
+          className="btn btn-sm btn-danger"
+        >
+          Delete
+        </button>
+      </div>
+    ),
   },
 ];
 
 const sizePerPageList = [
-  {
-    text: "5",
-    value: 5,
-  },
-  {
-    text: "10",
-    value: 10,
-  },
-  {
-    text: "25",
-    value: 25,
-  },
-  {
-    text: "All",
-    value: data.length,
-  },
+  { text: "5", value: 5 },
+  { text: "10", value: 10 },
+  { text: "25", value: 25 },
+  { text: "All", value: 100 },
 ];
 
-const contracts = () => {
+const handleEdit = (id) => {
+  console.log("Edit ID:", id);
+};
+
+const handleDelete = (id) => {
+  console.log("Delete ID:", id);
+};
+const Contracts = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/contract.json");
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div>
       <Row>
@@ -51,11 +72,34 @@ const contracts = () => {
               <p className="text-muted fs-14 mb-4">A table of contracts</p>
               <Link to={`/components/contracts/create`}>
                 <button
-                  class="flex justify-center items-center gap-1 select-none rounded-lg bg-[#5369f8] py-2 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                  type="button"
+                  style={{
+                    backgroundColor: "#007bff",
+                    color: "#fff",
+                    border: "none",
+                    borderRadius: "0.25rem",
+                    padding: "0.7rem 2rem",
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
+                    marginTop: "22px",
+                    marginBottom: "20px",
+                  }}
+                  className="btn btn-lg"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.boxShadow =
+                      "0px 6px 10px rgba(0, 0, 0, 0.2)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = "translateY(0px)";
+                    e.currentTarget.style.boxShadow =
+                      "0px 4px 6px rgba(0, 0, 0, 0.1)";
+                  }}
+                  class="btn btn-lg createBtn"
+                  type="submit"
                 >
-                  <span> Create</span>{" "}
-                  <IoIosAddCircleOutline className="text-sm" />
+                  Create <IoIosAddCircleOutline />
                 </button>
               </Link>
               <div
@@ -81,4 +125,4 @@ const contracts = () => {
   );
 };
 
-export default contracts;
+export default Contracts;

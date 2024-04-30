@@ -1,0 +1,6 @@
+[
+    { "id": 1, "title": "Contract 1", "discount": 10 },
+    { "id": 2, "title": "Contract 2", "discount": 20 },
+    { "id": 3, "title": "Contract 3", "discount": 30 }
+  ]
+  
