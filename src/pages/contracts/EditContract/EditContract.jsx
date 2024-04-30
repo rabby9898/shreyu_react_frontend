@@ -11,9 +11,7 @@ import {
   Button,
 } from "react-bootstrap";
 import toast from "react-hot-toast";
-import { createContract } from "../../../Api/Contracts";
-
-const CreateCotract = () => {
+const EditContract = () => {
   const [value, setValue] = useState("");
 
   const toolbarOptions = [
@@ -55,8 +53,15 @@ const CreateCotract = () => {
       desc,
     };
     try {
-      const data = await createContract(contractData);
-      console.log(data);
+      fetch("http://localhost:2000/contract", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(contractData),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
       toast.success("Successfully Created!");
       form.reset();
     } catch (err) {
@@ -64,7 +69,6 @@ const CreateCotract = () => {
       toast.error("Created Failure!");
     }
   };
-
   return (
     <div className="mt-5">
       <div className="display-5">Create A New Deal</div>
@@ -141,4 +145,4 @@ const CreateCotract = () => {
   );
 };
 
-export default CreateCotract;
+export default EditContract;

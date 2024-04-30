@@ -4,6 +4,7 @@ import Table from "../../components/Table";
 import { Link } from "react-router-dom";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useEffect, useState } from "react";
+import { getContract } from "../../Api/Contracts";
 
 const columns = [
   { Header: "ID", accessor: "id", sort: true },
@@ -15,8 +16,9 @@ const columns = [
     Cell: ({ row }) => (
       <div>
         <button
+          style={{ marginRight: "4px" }}
           onClick={() => handleEdit(row.original.id)}
-          className="btn btn-sm btn-primary mr-2"
+          className="btn btn-sm btn-primary"
         >
           Edit
         </button>
@@ -49,17 +51,9 @@ const Contracts = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/contract.json");
-        const jsonData = await response.json();
-        setData(jsonData);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
+    getContract().then((data) => {
+      setData(data);
+    });
   }, []);
 
   return (

@@ -6,7 +6,6 @@ import { configureFakeBackend } from "./helpers";
 // Themes
 // For Default import Theme.scss
 import "./assets/scss/Theme.scss";
-import "./main.css";
 import { Toaster } from "react-hot-toast";
 // For Dark import Theme-Dark.scss
 // import './assets/scss/Theme-Dark.scss';
