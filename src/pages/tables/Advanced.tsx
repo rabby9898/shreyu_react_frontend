@@ -98,7 +98,6 @@ const Advanced = () => {
             <Card.Body>
               <h4 className="header-title">Search</h4>
               <p className="text-muted fs-14 mb-4">A Table allowing search</p>
-
               <Table
                 columns={columns}
                 data={data}

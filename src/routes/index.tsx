@@ -3,6 +3,7 @@ import { Navigate, Route, RouteProps } from "react-router-dom";
 
 // components
 import PrivateRoute from "./PrivateRoute";
+import CreateCotract from "../pages/contracts/CreateContract/CreateCotract";
 // import Root from "./Root";
 
 // lazy load all the views
@@ -45,7 +46,7 @@ const Kanban = React.lazy(() => import("../pages/apps/Tasks/Board/"));
 const FileManager = React.lazy(() => import("../pages/apps/FileManager"));
 
 /*---------------Task4 Pages------------------------*/ 
-const Contracts = React.lazy(() => import("../pages/contracts/Contracts"));
+const Contracts = React.lazy(() => import("../pages/contracts/Contract"));
 const HomeVisits = React.lazy(() => import("../pages/homeVisits/HomeVisits"));
 const Patients = React.lazy(() => import("../pages/patients/Patients"));
 const Settings = React.lazy(() => import("../pages/settings/Settings"));
@@ -310,6 +311,13 @@ const uiRoutes: RoutesProps = {
       element: <Contracts />,
       route: PrivateRoute,
     },
+    {
+      path: "/components/contracts/create",
+      name: "Create",
+      element: <CreateCotract />,
+      route: PrivateRoute,
+    },
+
     {
       path: "/components/homeVisits",
       name: "Home Visits",
