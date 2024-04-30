@@ -51,10 +51,11 @@ const contracts = () => {
               <p className="text-muted fs-14 mb-4">A table of contracts</p>
               <Link to={`/components/contracts/create`}>
                 <button
-                  class="select-none rounded-lg bg-[#5369f8] py-2 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                  class="flex justify-center items-center gap-1 select-none rounded-lg bg-[#5369f8] py-2 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                   type="button"
                 >
-                  Create <IoIosAddCircleOutline />
+                  <span> Create</span>{" "}
+                  <IoIosAddCircleOutline className="text-sm" />
                 </button>
               </Link>
               <div

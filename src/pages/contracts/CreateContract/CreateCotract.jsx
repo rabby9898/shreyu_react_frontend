@@ -39,13 +39,38 @@ const CreateCotract = () => {
     toolbar: toolbarOptions,
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const number = form.number.value;
+    const desc = value;
+    console.log(title, number, desc);
+
+    const contractData = {
+      title,
+      number,
+      desc,
+    };
+    try {
+      fetch("http://localhost:2000/contract", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(contractData),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="mt-5">
       <div className="display-5">Create A New Deal</div>
-      <Form
-        className="form-horizontal"
-        //  onSubmit={handleSubmit}
-      >
+      <Form className="form-horizontal" onSubmit={handleSubmit}>
         <Row>
           <Col md={6}>
             <Form.Group as={Row} className="mb-3">
@@ -88,7 +113,7 @@ const CreateCotract = () => {
         </Row>
         <button
           class="select-none rounded-lg bg-[#5369f8] my-2 py-2 px-10 text-center align-middle font-sans text-sm font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          type="button"
+          type="submit"
         >
           Create
         </button>
