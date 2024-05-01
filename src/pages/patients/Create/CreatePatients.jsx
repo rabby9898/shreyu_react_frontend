@@ -4,13 +4,44 @@ import { FaLocationDot } from "react-icons/fa6";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { SlCalender } from "react-icons/sl";
 import { MdEmail } from "react-icons/md";
+import toast from "react-hot-toast";
+import { createPatient } from "../../../Api/Contracts";
+import CreateBtn from "../../../components/Button/CreateBtn";
+
 const CreatePatients = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const number = form.number.value;
+    const address = form.address.value;
+    const gender = form.gender.value;
+
+    const patientData = {
+      name,
+      email,
+      number,
+      address,
+      gender,
+    };
+    try {
+      const data = await createPatient(patientData);
+      console.log(data);
+      toast.success("Successfully Created!");
+      form.reset();
+    } catch (err) {
+      console.log(err);
+      toast.error("Created Failure!");
+    }
+  };
+
   return (
     <div>
       <div class="card">
         <div class="card-header">Patients</div>
         <div class="card-body">
-          <form className="patients-form">
+          <form className="patients-form" onSubmit={handleSubmit}>
             <div class="flex-container">
               <div class="flex-item">
                 <div class="input-group mb-2">
@@ -23,6 +54,8 @@ const CreatePatients = () => {
                     type="text"
                     class="form-control"
                     placeholder="Client Name"
+                    name="name"
+                    required
                   />
                 </div>
               </div>
@@ -37,6 +70,8 @@ const CreatePatients = () => {
                     type="text"
                     class="form-control"
                     placeholder="Email Address"
+                    name="email"
+                    required
                   />
                 </div>
               </div>
@@ -51,6 +86,8 @@ const CreatePatients = () => {
                     type="text"
                     class="form-control"
                     placeholder="Phone Number"
+                    name="number"
+                    required
                   />
                 </div>
               </div>
@@ -68,6 +105,8 @@ const CreatePatients = () => {
                     type="text"
                     class="form-control"
                     placeholder="Address"
+                    name="address"
+                    required
                   />
                 </div>
               </div>
@@ -82,6 +121,8 @@ const CreatePatients = () => {
                     class="form-control"
                     id="inlineFormCustomSelect"
                     placeholder="Select Gender"
+                    name="gender"
+                    required
                   >
                     <option selected>Select Gender</option>
                     <option value="1">Male</option>
@@ -100,14 +141,13 @@ const CreatePatients = () => {
                     type="text"
                     class="form-control"
                     placeholder="Date Pick"
+                    disabled
                   />
                 </div>
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">
-              Sign in
-            </button>
+            <CreateBtn title={"Create"} />
           </form>
         </div>
       </div>
