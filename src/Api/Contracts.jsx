@@ -20,3 +20,13 @@ export const createPatient = async (patientData) => {
   const { data } = await AxiosSecure.post(`/patient`, patientData);
   return data;
 };
+
+/******************Home visits  Api***********************/
+export const getVisitors = async () => {
+  const { data } = await AxiosSecure(`/visitors`);
+  return data;
+};
+export const createVisitors = async (patientData) => {
+  const { data } = await AxiosSecure.post(`/visitor`, patientData);
+  return data;
+};

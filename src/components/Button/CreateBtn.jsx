@@ -1,3 +1,5 @@
+import { IoIosAddCircleOutline } from "react-icons/io";
+
 const CreateBtn = ({ title }) => {
   return (
     <>
@@ -26,7 +28,7 @@ const CreateBtn = ({ title }) => {
         class="btn btn-lg createBtn"
         type="submit"
       >
-        {title}
+        {title} {<IoIosAddCircleOutline />}
       </button>
     </>
   );

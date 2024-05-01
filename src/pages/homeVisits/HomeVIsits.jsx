@@ -7,15 +7,17 @@ import { useEffect, useState } from "react";
 // import AxiosSecure from "../../Api/AxiosSecure";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import Table from "../../components/Table";
-import { getContract } from "../../Api/Contracts";
-import { FaCheckDouble } from "react-icons/fa";
+import { getVisitors } from "../../Api/Contracts";
+import { FaCheckDouble, FaFilter } from "react-icons/fa";
+import CreateBtn from "../../components/Button/CreateBtn";
+import Swal from "sweetalert2";
 
 const columns = [
   { Header: "ID", accessor: "id", sort: true },
-  { Header: "Client Name", accessor: "clientName", sort: true },
+  { Header: "Client Name", accessor: "name", sort: true },
   { Header: "Phone", accessor: "phone", sort: false },
   { Header: "Address", accessor: "address", sort: false },
-  { Header: "Visit Date", accessor: "visitDate", sort: true },
+  { Header: "Visit Date", accessor: "date", sort: true },
   {
     /***********ADD A NEW CELL************************/
     Header: "View",
@@ -60,14 +62,22 @@ const columns = [
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">
+            <button
+              class="dropdown-item"
+              type="button"
+              onClick={() => handleEdit(row.original.id)}
+            >
               Edit
-            </a>
+            </button>
           </li>
           <li>
-            <a class="dropdown-item" href="#">
+            <button
+              class="dropdown-item"
+              type="button"
+              onClick={() => handleDelete(row.original.id)}
+            >
               Delete
-            </a>
+            </button>
           </li>
         </ul>
       </div>
@@ -75,6 +85,36 @@ const columns = [
   },
 ];
 
+function handleEdit() {
+  console.log("Edit button clicked");
+}
+
+function handleDelete() {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // AxiosSecure.delete(`/contracts/${id}`)
+      // .then((res) => {
+      //   if (res.data.deletedCount > 0) {
+      // refetch();
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success",
+      });
+      //   }
+      // });
+    }
+  });
+  console.log("Delete button clicked");
+}
 const sizePerPageList = [
   { text: "5", value: 5 },
   { text: "10", value: 10 },
@@ -85,49 +125,81 @@ const HomeVisits = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    getContract().then((data) => {
+    getVisitors().then((data) => {
       setData(data);
     });
   }, []);
   return (
     <div>
+      <h4 style={{ marginTop: "10px" }} className="header-title">
+        Home Visits
+      </h4>
+      <p className="text-muted fs-14 mb-4">A table of Visitors</p>
+      <Link to={`/components/contracts/create`}>
+        <CreateBtn title={"Create"} />
+      </Link>
+      <div>
+        <div class="card text-center">
+          <div class="card-header">
+            <FaFilter />
+            Filter
+          </div>
+          <div id="filter" class="card-body">
+            <div>
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Pending
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Completed
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  All
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Premium
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Free
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Row>
         <Col>
           <Card>
             <Card.Body>
-              <h4 className="header-title">Home Visits</h4>
-              <p className="text-muted fs-14 mb-4">A table of Visitors</p>
-              <Link to={`/components/contracts/create`}>
-                <button
-                  style={{
-                    backgroundColor: "#007bff",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "0.25rem",
-                    padding: "0.7rem 2rem",
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-                    transition: "box-shadow 0.3s ease, transform 0.3s ease",
-                    marginTop: "22px",
-                    marginBottom: "20px",
-                  }}
-                  className="btn btn-lg createBtn"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                    e.currentTarget.style.boxShadow =
-                      "0px 6px 10px rgba(0, 0, 0, 0.2)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = "translateY(0px)";
-                    e.currentTarget.style.boxShadow =
-                      "0px 4px 6px rgba(0, 0, 0, 0.1)";
-                  }}
-                  type="submit"
-                >
-                  Create <IoIosAddCircleOutline />
-                </button>
-              </Link>
               <div
                 style={{
                   marginTop: "16px",

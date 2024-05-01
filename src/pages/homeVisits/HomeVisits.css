@@ -6,3 +6,17 @@
 .check-icon{
     color: green;
 }
+.card-body{
+    display: flex;
+    margin: 0px auto;
+    gap: 30px;
+}
+.card-body .btn-secondary{
+    width: 200px;
+    background-color: transparent;
+    color: black;
+    border-color: gray;
+}
+.filter{
+    background-color: transparent;
+}
