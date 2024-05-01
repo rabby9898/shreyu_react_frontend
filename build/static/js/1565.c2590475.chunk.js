@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshreyu_react_app=self.webpackChunkshreyu_react_app||[]).push([[1565],{81565:function(e,r,s){s.r(r);s(72791);var u=s(80184);r.default=function(){return(0,u.jsx)("div",{children:(0,u.jsx)("h1",{children:"Roles"})})}}}]);
+//# sourceMappingURL=1565.c2590475.chunk.js.map

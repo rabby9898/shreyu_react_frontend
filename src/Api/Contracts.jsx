@@ -1,5 +1,6 @@
 import AxiosSecure from "./AxiosSecure";
 
+/******************Contract Api***********************/
 export const createContract = async (contractData) => {
   const { data } = await AxiosSecure.post(`/contracts`, contractData);
   return data;
@@ -7,5 +8,11 @@ export const createContract = async (contractData) => {
 
 export const getContract = async () => {
   const { data } = await AxiosSecure(`/contracts`);
+  return data;
+};
+
+/******************Patients Api***********************/
+export const getPatients = async () => {
+  const { data } = await AxiosSecure(`/patients`);
   return data;
 };

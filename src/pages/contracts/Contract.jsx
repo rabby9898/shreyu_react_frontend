@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { getContract } from "../../Api/Contracts";
-import AxiosSecure from "../../Api/AxiosSecure";
+// import AxiosSecure from "../../Api/AxiosSecure";
 import Swal from "sweetalert2";
 
 const columns = [

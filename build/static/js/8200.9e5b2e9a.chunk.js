@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkshreyu_react_app=self.webpackChunkshreyu_react_app||[]).push([[8200],{48200:function(e,s,r){r.r(s);r(72791);var a=r(80184);s.default=function(){return(0,a.jsx)("div",{children:(0,a.jsx)("h1",{children:"This is Patients Page"})})}}}]);
+//# sourceMappingURL=8200.9e5b2e9a.chunk.js.map
