@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkshreyu_react_app=self.webpackChunkshreyu_react_app||[]).push([[9928],{19928:function(e,r,s){s.r(r);s(72791);var u=s(80184);r.default=function(){return(0,u.jsx)("div",{children:(0,u.jsx)("h1",{children:"Users"})})}}}]);
-//# sourceMappingURL=9928.23a0f63e.chunk.js.map

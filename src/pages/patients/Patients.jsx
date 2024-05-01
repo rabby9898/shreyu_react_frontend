@@ -97,7 +97,7 @@ const Patients = () => {
               <Card.Body>
                 <h4 className="header-title">Patients</h4>
                 <p className="text-muted fs-14 mb-4">A table of patients</p>
-                <Link to={`/components/contracts/create`}>
+                <Link to={`/components/patients/create`}>
                   <button
                     style={{
                       backgroundColor: "#007bff",

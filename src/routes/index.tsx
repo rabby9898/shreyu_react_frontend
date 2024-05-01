@@ -5,6 +5,7 @@ import { Navigate, Route, RouteProps } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import CreateCotract from "../pages/contracts/CreateContract/CreateCotract";
 import EditContract from "../pages/contracts/EditContract/EditContract";
+import CreatePatients from "../pages/patients/Create/CreatePatients";
 // import Root from "./Root";
 
 // lazy load all the views
@@ -335,6 +336,12 @@ const uiRoutes: RoutesProps = {
       path: "/components/patients",
       name: "Patients",
       element: <Patients />,
+      route: PrivateRoute,
+    },
+    {
+      path: "/components/patients/create",
+      name: "Create",
+      element: <CreatePatients />,
       route: PrivateRoute,
     },
     {

@@ -1,0 +1,29 @@
+
+.patients-form{
+    margin-top: 30px;
+    margin-bottom: auto;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.flex-item {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 15px;
+}
+.patients-form input{
+    padding: 12px 10px;
+}
+.patients-form .input-group-text {
+    padding: 16px 16px;
+}
+.card-header{
+    color: white;
+    font-size: 18px;
+    background-color: #5369f8 ;
+}
