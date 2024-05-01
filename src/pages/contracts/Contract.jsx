@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { useEffect, useState } from "react";
 import { getContract } from "../../Api/Contracts";
+import AxiosSecure from "../../Api/AxiosSecure";
+import Swal from "sweetalert2";
 
 const columns = [
   { Header: "ID", accessor: "id", sort: true },
   { Header: "Title", accessor: "title", sort: true },
   { Header: "Discount", accessor: "discount", sort: false },
   {
+    /***********ADD A NEW CELL************************/
     Header: "Actions",
     accessor: "actions",
     Cell: ({ row }) => (
@@ -40,12 +43,36 @@ const sizePerPageList = [
   { text: "All", value: 100 },
 ];
 
+/***********EDIT SINGLE CONTRACT************************/
 const handleEdit = (id) => {
   console.log("Edit ID:", id);
 };
 
+/***********DELETE SINGLE CONTRACT************************/
 const handleDelete = (id) => {
-  console.log("Delete ID:", id);
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // AxiosSecure.delete(`/contracts/${id}`)
+      // .then((res) => {
+      //   if (res.data.deletedCount > 0) {
+      // refetch();
+      Swal.fire({
+        title: "Deleted!",
+        text: "Your file has been deleted.",
+        icon: "success",
+      });
+      //   }
+      // });
+    }
+  });
 };
 const Contracts = () => {
   const [data, setData] = useState([]);
