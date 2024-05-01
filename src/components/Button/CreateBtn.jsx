@@ -3,7 +3,7 @@ const CreateBtn = ({ title }) => {
     <>
       <button
         style={{
-          backgroundColor: "#007bff",
+          backgroundColor: "#5369f8",
           color: "#fff",
           border: "none",
           borderRadius: "0.25rem",

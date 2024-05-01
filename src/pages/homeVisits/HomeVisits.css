@@ -1,0 +1,8 @@
+.action{
+    border-radius: 50px;
+    justify-items: center;
+    justify-content: center;
+}
+.check-icon{
+    color: green;
+}

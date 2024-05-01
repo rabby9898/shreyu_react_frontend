@@ -49,7 +49,7 @@ const FileManager = React.lazy(() => import("../pages/apps/FileManager"));
 
 /*---------------Task4 Pages------------------------*/ 
 const Contracts = React.lazy(() => import("../pages/contracts/Contract"));
-const HomeVisits = React.lazy(() => import("../pages/homeVisits/HomeVisits"));
+const HomeVisits = React.lazy(() => import("../pages/homeVisits/HomeVIsits"));
 const Patients = React.lazy(() => import("../pages/patients/Patients"));
 const Settings = React.lazy(() => import("../pages/settings/Settings"));
 const Roles = React.lazy(() => import("../pages/role&users/Roles"));

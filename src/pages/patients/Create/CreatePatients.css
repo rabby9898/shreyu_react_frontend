@@ -22,7 +22,11 @@
 .patients-form .input-group-text {
     padding: 16px 16px;
 }
-.card-header{
+.card{
+    margin-top: 30px;
+}
+.card .card-header{
+    
     color: white;
     font-size: 18px;
     background-color: #5369f8 ;
