@@ -1,46 +1,78 @@
-# Getting Started with Create React App
+# Hospital Management Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React.js web application designed to manage an office employee in a hospital setting. It includes functionalities such as managing contracts, patients, home visits, roles & users, and general settings.
 
-## Available Scripts
+## Live Link: https://shreyo-react.web.app
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+- **Dashboard**: Provides an overview of different sections of the application.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  - Contracts: Displays contract-related information.
+  - Patients: Manages patient details and records.
+  - Home Visits: Tracks and schedules home visits for patients.
+  - Roles & Users: Manages roles and user accounts within the system.
+  - Settings: General settings for the application.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Contracts Management**:
 
-### `yarn test`
+  - View contracts in a table format.
+  - Create new contracts using a form with validation.
+  - Update existing contracts using an update form.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Patients Management**:
 
-### `yarn build`
+  - View patient records in a table view.
+  - Create new patient entries with form validation.
+  - Update patient information as needed.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Home Visits**:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - Schedule and manage home visits for patients.
+  - Track visit details and status.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Roles & Users**:
 
-### `yarn eject`
+  - Manage user roles and permissions.
+  - Add, edit, and delete user accounts.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Settings**:
+  - General settings for the application, such as theme, notifications, etc.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- React.js for front-end development.
+- JavaScript for logic implementation.
+- Bootstrap for responsive design and UI components.
+- API integration for data fetching and management.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Setup Instructions
 
-## Learn More
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using `npm install`.
+4. Start the development server using `npm start`.
+5. Access the application in your browser at `http://localhost:3000`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Folder Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+hospital-management-app/
+│
+├── public/
+│   └── index.html
+│
+├── src/
+│   ├── components/
+│   │   ├── Contracts/
+│   │   ├── Patients/
+│   │   ├── HomeVisits/
+│   │   ├── RolesUsers/
+│   │   ├── Settings/
+│   │   └── Dashboard/
+│   │
+│   ├── App.js
+│   └── index.js
+│
+└── README.md
+```

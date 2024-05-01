@@ -136,7 +136,7 @@ const Sidebar = () => {
 
           <div class="card">
             <div class="card-body">
-              <form className="patients-form" onSubmit={handleSubmit}>
+              <form className="sidebar-form" onSubmit={handleSubmit}>
                 <div class="flex-container">
                   <div class="flex-item">
                     <div class="input-group mb-2">
