@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosSecure = axios.create({
-  baseURL: "http://localhost:2000",
+  baseURL: "https://shreyu-react-server.vercel.app",
 });
 
 export default AxiosSecure;

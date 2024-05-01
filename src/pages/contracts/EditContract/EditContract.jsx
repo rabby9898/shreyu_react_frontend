@@ -54,7 +54,7 @@ const EditContract = () => {
       desc,
     };
     try {
-      fetch("http://localhost:2000/contract", {
+      fetch("https://shreyu-react-server.vercel.app/contract", {
         method: "POST",
         headers: {
           "content-type": "application/json",
