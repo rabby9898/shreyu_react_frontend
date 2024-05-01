@@ -6,6 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 import CreateCotract from "../pages/contracts/CreateContract/CreateCotract";
 import EditContract from "../pages/contracts/EditContract/EditContract";
 import CreatePatients from "../pages/patients/Create/CreatePatients";
+import VisitorsCreate from "../pages/homeVisits/VisitorsCreate/VisitorsCreate";
 // import Root from "./Root";
 
 // lazy load all the views
@@ -330,6 +331,12 @@ const uiRoutes: RoutesProps = {
       path: "/components/homeVisits",
       name: "Home Visits",
       element: <HomeVisits />,
+      route: PrivateRoute,
+    },
+    {
+      path: "/components/visitors/create",
+      name: "Create",
+      element: <VisitorsCreate />,
       route: PrivateRoute,
     },
     {

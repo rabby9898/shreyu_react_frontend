@@ -135,7 +135,7 @@ const HomeVisits = () => {
         Home Visits
       </h4>
       <p className="text-muted fs-14 mb-4">A table of Visitors</p>
-      <Link to={`/components/contracts/create`}>
+      <Link to={`/components/visitors/create`}>
         <CreateBtn title={"Create"} />
       </Link>
       <div>

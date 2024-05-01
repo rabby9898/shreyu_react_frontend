@@ -26,7 +26,7 @@ export const getVisitors = async () => {
   const { data } = await AxiosSecure(`/visitors`);
   return data;
 };
-export const createVisitors = async (patientData) => {
-  const { data } = await AxiosSecure.post(`/visitor`, patientData);
+export const createVisitors = async (visitorsData) => {
+  const { data } = await AxiosSecure.post(`/visitor`, visitorsData);
   return data;
 };
