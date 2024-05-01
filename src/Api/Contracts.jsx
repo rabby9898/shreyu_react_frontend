@@ -30,3 +30,25 @@ export const createVisitors = async (visitorsData) => {
   const { data } = await AxiosSecure.post(`/visitor`, visitorsData);
   return data;
 };
+
+/******************Home Role  Api***********************/
+export const getRoles = async () => {
+  const { data } = await AxiosSecure(`/roles`);
+  return data;
+};
+
+export const createRole = async (rolesData) => {
+  const { data } = await AxiosSecure.post(`/role`, rolesData);
+  return data;
+};
+
+/******************Home Users  Api***********************/
+export const getUsers = async () => {
+  const { data } = await AxiosSecure(`/users`);
+  return data;
+};
+
+export const createUsers = async (usersData) => {
+  const { data } = await AxiosSecure.post(`/user`, usersData);
+  return data;
+};

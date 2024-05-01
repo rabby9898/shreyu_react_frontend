@@ -7,6 +7,8 @@ import CreateCotract from "../pages/contracts/CreateContract/CreateCotract";
 import EditContract from "../pages/contracts/EditContract/EditContract";
 import CreatePatients from "../pages/patients/Create/CreatePatients";
 import VisitorsCreate from "../pages/homeVisits/VisitorsCreate/VisitorsCreate";
+import Role from "../pages/role&users/Role";
+import CreateUsers from "../pages/role&users/CreateUsers";
 // import Root from "./Root";
 
 // lazy load all the views
@@ -53,7 +55,6 @@ const Contracts = React.lazy(() => import("../pages/contracts/Contract"));
 const HomeVisits = React.lazy(() => import("../pages/homeVisits/HomeVIsits"));
 const Patients = React.lazy(() => import("../pages/patients/Patients"));
 const Settings = React.lazy(() => import("../pages/settings/Settings"));
-const Roles = React.lazy(() => import("../pages/role&users/Roles"));
 const Users = React.lazy(() => import("../pages/role&users/Users"));
 
 /*---------------Task4 Pages------------------------*/
@@ -358,7 +359,7 @@ const uiRoutes: RoutesProps = {
         {
           path: "/role&users/roles",
           name: "Roles",
-          element: <Roles />,
+          element: <Role />,
           route: PrivateRoute,
         },
         {
@@ -368,6 +369,18 @@ const uiRoutes: RoutesProps = {
           route: PrivateRoute,
         },
       ],
+    },
+    {
+      path: "/role&users/roles/create",
+      name: "Roles",
+      element: <Role />,
+      route: PrivateRoute,
+    },
+    {
+      path: "/role&users/create",
+      name: "Users",
+      element: <CreateUsers/>,
+      route: PrivateRoute,
     },
     {
       path: "/components/settings",
